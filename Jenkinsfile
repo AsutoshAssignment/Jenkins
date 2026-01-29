@@ -1,21 +1,25 @@
 pipeline { 
     agent any
+
     stages {
         stage('Clone Git') {
             steps {
-                git 'https://github.com/AsutoshAssignment/Jenkins.git'
+                git branch: 'main',
+                    url: 'https://github.com/AsutoshAssignment/Jenkins.git'
             }
         }
+
         stage('Build Code') {
             steps {
-                sh "chmod u+x Prog1.py"
-                sh "./Prog1.py"
+                sh 'chmod +x Prog1.py'
+                sh './Prog1.py'
             }
         }
-     stage('Test Code') {
+
+        stage('Test Code') {
             steps {
-                sh "chmod u+x Test.py"
-                sh "./Test.py"
+                sh 'chmod +x Test.py'
+                sh './Test.py'
             }
         }
     } 
