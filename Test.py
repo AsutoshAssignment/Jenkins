@@ -5,7 +5,7 @@ from Prog1 import summation
 
 class TestSum(unittest.TestCase):
   def test_list_int(self):
-    data = [23,32]
+    data = [23,30]
     result = summation(data)
     self.assertEqual(result,55)
     
